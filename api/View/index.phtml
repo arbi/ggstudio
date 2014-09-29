@@ -1,0 +1,68 @@
+<?php 
+session_start();
+if (!empty($_SESSION['user_id'])) {
+	$name = 'Hallo ' . $_SESSION['name'];
+	$loginBtnText = 'Logout !';
+	$status = 1;
+	$userPlacehold = " Welcome Back!";
+	$passPlacehold = " Welcome Back!";
+} else {
+	$name = 'Hallo Anonymous';
+	$loginBtnText = 'Login !';	
+	$status = 0;
+	$userPlacehold = " Insert Username!";
+	$passPlacehold = " Insert Password!";
+}
+?>
+
+<html>
+	<head>
+        <title>Comment System</title>
+        <meta http-equiv="refresh" content="60">
+        <link rel="stylesheet" type="css/text" href="./css/comment.css"/>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src='./js/comment.js'></script>
+		<script> 
+			$(function() {
+				$("#container").load("./comment.phtml"); 
+			}); 
+		</script>
+    </head>
+<body>
+<div class="login-container">
+	<input type="text" id="username" class="login-input" name="username" value="" placeholder="<?= $userPlacehold ?>" />
+	<input type="password" id="password" class="login-input" name="password" value="" placeholder="<?= $passPlacehold ?>" />
+    <div class="login-bt" data-status="<?= $status ?>"><?= $loginBtnText ?></div>
+    <div class="welcome-cmt"><?= $name ?></div>
+
+</div>
+<div class="cmt-container" >
+
+    <div class="cmt-cnt">
+        <div class="thecom">
+            <h5>Arbi Bach</h5><span class="post-dt"></span>
+            <br/>
+            <p>
+                What is your suggestions...!!! 
+            </p>
+        </div>
+    </div><!-- end "cmt-cnt" -->
+
+<div id="container">
+	</div>
+    <div class="new-com-bt">
+        <span>Write a comment ...</span>
+    </div>
+
+    <div class="new-com-cnt">
+        <textarea class="the-new-com"></textarea>
+        <div class="bt-add-com">Post comment</div>
+        <div class="bt-cancel-com">Cancel</div>
+    </div>
+    <div class="clear"></div>
+	<div class=""></div>
+	
+</div>
+</body>
+</html>
