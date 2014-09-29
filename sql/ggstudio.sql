@@ -1,6 +1,8 @@
 --
 -- Table structure for table `comment`
 --
+CREATE DATABASE ggstudio;
+use ggstudio;
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
