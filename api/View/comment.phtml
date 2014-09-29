@@ -24,19 +24,19 @@
 	    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 	    curl_close($ch); 
 	    $userInfo = json_decode($result, true);
-	    $user = 'Anonymous';
+	    $user = 'Stranger';
 	    
 	    if ($userInfo) {
-	    	$user =  $userInfo['firstname'] . ' ' . $userInfo['lastname'];
+	    	$user =  htmlspecialchars($userInfo['firstname']) . ' ' . htmlspecialchars($userInfo['lastname']);
 	    }
     ?>
 	<div class="cmt-cnt">
 	    <img src="<?php echo $grav_url; ?>" />
 	    <div class="thecom">
-	        <h5><?php echo $user; ?></h5><span data-utime="1371248446" class="com-dt"><?php echo $comment['date']; ?></span>
+	        <h5><?php echo $user; ?></h5><span class="com-dt"><?php echo $comment['date']; ?></span>
 	        <br/>
 	        <p>
-	            <?php echo $comment['comment']; ?>
+	            <?php echo htmlspecialchars($comment['comment']); ?>
 	        </p>
 	    </div>
 	</div>

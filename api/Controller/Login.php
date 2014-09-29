@@ -13,12 +13,16 @@ class Login
 	public function authenticate()
 	{
 		$parameters = func_get_args()[0];
-		$condition  = " username ='" . $parameters['username'] . "'";
+		$username   = htmlspecialchars(trim($parameters['username']));
+		$username   = preg_replace('/&|#|;|\(|\)|\/|\'/', '', $username);
+		$condition  = " username ='" . $username . "'";
+		$password   = htmlspecialchars(trim($parameters['password']));
+		$password   = preg_replace('/&|#|;|\(|\)|\/|\'/', '', $password);
 
 		$db = new Database();
 		$result = $db->get(self::TBL_USER, null, $condition);
 		if ($result) {
-			if (password_verify($parameters['password'], $result['password'])) {
+			if (password_verify($password, $result['password'])) {
 				$_SESSION['user_id'] = $result['id'];
 				$_SESSION['name']    = $result['firstname'];
 				echo json_encode(

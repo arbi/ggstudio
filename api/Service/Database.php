@@ -71,9 +71,9 @@ class Database
 			$values[] = "'" . $value . "'";
 		}
 
-
 		$cloumns  = implode(',' , $keys);
 		$dbValues = implode(',' , $values);
+		
 		try {
 			$result = $this->db->exec(
 				"INSERT INTO " . $table . "(" . $cloumns . ") VALUES(" . $dbValues . ")");

@@ -71,7 +71,7 @@ $(function() {
 	            success: function(data){
 	            	if (data == 'true') {
 	                	$('.login-bt').text('Login !');
-	                	$('.welcome-cmt').text('Welcome Anonymous');
+	                	$('.welcome-cmt').text('Welcome Stranger');
 	                	$('.login-bt').attr('data-status', 0);
 	                	$('#username').attr('placeholder', ' Insert Username!');
 	            		$('#password').attr('placeholder', ' Insert Password!');

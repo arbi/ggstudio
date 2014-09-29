@@ -7,7 +7,7 @@ if (!empty($_SESSION['user_id'])) {
 	$userPlacehold = " Welcome Back!";
 	$passPlacehold = " Welcome Back!";
 } else {
-	$name = 'Hallo Anonymous';
+	$name = 'Hallo Stranger';
 	$loginBtnText = 'Login !';	
 	$status = 0;
 	$userPlacehold = " Insert Username!";
@@ -34,7 +34,7 @@ if (!empty($_SESSION['user_id'])) {
 	<input type="text" id="username" class="login-input" name="username" value="" placeholder="<?= $userPlacehold ?>" />
 	<input type="password" id="password" class="login-input" name="password" value="" placeholder="<?= $passPlacehold ?>" />
     <div class="login-bt" data-status="<?= $status ?>"><?= $loginBtnText ?></div>
-    <div class="welcome-cmt"><?= $name ?></div>
+    <div class="welcome-cmt"><?= htmlspecialchars($name) ?></div>
 
 </div>
 <div class="cmt-container" >
