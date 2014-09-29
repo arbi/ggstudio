@@ -13,7 +13,7 @@ Hallo Good Game Studio !
   *	username = tatjana
   *	password = halloGGS
 
-5.	set url http://localhost/api/ggs/View/index.phtml in your browser.
+5.	set url __http://localhost/ggs/api/View/index.phtml__ in your browser.
 6.	Done.
 
 
