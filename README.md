@@ -1,6 +1,6 @@
 Hallo Good Game Studio !
 
-#Usage Guidline:
+#Guidline:
 
 ---
 
