@@ -4,7 +4,7 @@ Hallo Good Game Studio !
 
 ---
 
-1.	Go to /var/www/ folder OR se your virtual Host
+1.	Go to /var/www/ folder OR set your virtual Host
 2.	run git clone git@github.com:arbi/ggstudio.git ggs 
   * It's assumed that your folder name is ggs so set ggs folder for cloning.
 3. 	Set your Database config in ggs/api/Config/database.config.php
