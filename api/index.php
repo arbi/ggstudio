@@ -1,5 +1,6 @@
 <?php
 namespace ggs\api;
+session_start();
 
 class Request {
 
@@ -107,4 +108,6 @@ class Request {
         }
     }
 }
+
+require 'init_autoloader.php';
 $request = new Request();

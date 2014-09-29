@@ -2,7 +2,7 @@
 
 namespace ggs\api\Service;
 
-// use ggs\api\Config;
+ use ggs\api\Config\DbConfig;
 
 class Database
 {
@@ -10,8 +10,7 @@ class Database
 
 	public function __construct()
 	{
-		require_once('./Config/database.config.php');
-		$dbConfig = new \ggs\api\Config\DbConfig();
+		$dbConfig = new DbConfig();
 		$dbConfig = $dbConfig->dbConfig;
 
 		$this->db = new \PDO(
@@ -73,7 +72,7 @@ class Database
 
 		$cloumns  = implode(',' , $keys);
 		$dbValues = implode(',' , $values);
-		
+
 		try {
 			$result = $this->db->exec(
 				"INSERT INTO " . $table . "(" . $cloumns . ") VALUES(" . $dbValues . ")");

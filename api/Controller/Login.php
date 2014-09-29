@@ -2,9 +2,6 @@
 namespace ggs\api\Controller;
 
 use ggs\api\Service\Database;
-session_start();
-
-require_once('./Service/Database.php');
 
 class Login
 {
