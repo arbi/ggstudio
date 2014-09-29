@@ -4,15 +4,16 @@ Hallo Good Game Studio !
 
 ---
 
-1.	git clone git@github.com:arbi/ggstudio.git ggs 
+1.	Go to /var/www/ folder OR se your virtual Host
+2.	run git clone git@github.com:arbi/ggstudio.git ggs 
   * It's assumed that your folder name is ggs so set ggs folder for cloning.
-2. 	Set your Database config in ggs/api/Config/database.config.php
-3. 	I just set login process not Signup so execute this sql to add a default user.
+3. 	Set your Database config in ggs/api/Config/database.config.php
+4. 	I just set login process not Signup so execute this sql to add a default user.
   * execute sql from : ggs/sql/ggstudio.sql
   *	username = tatjana
   *	password = halloGGS
 
-4.	set url http://localhost/api/ggs/View/index.phtml in your browser.
-5.	Done.
+5.	set url http://localhost/api/ggs/View/index.phtml in your browser.
+6.	Done.
 
 
