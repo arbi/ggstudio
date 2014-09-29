@@ -13,7 +13,7 @@ class Comment
 	public function get()
 	{
 		$parameters = func_get_args()[0];
-		$db = new Database();
+		$db = Database::getInstance();
 
 		if (empty($parameters)) {
 			$result = $db->getAll(self::TBL_COMMENT);
@@ -26,7 +26,7 @@ class Comment
 	public function create()
 	{
 		$parameters = func_get_args()[0];
-		$db = new Database();
+		$db = Database::getInstance();
 
 		$comment = htmlspecialchars(trim($parameters['comment']));
 		 $comment = preg_replace('/\'/', '', $comment);

@@ -2,13 +2,24 @@
 
 namespace ggs\api\Service;
 
- use ggs\api\Config\DbConfig;
+use ggs\api\Config\DbConfig;
 
 class Database
 {
 	private $db;
 
-	public function __construct()
+
+ 	public static function getInstance()
+    {
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new static();
+        }
+
+        return $instance;
+    }
+
+	private function __construct()
 	{
 		$dbConfig = new DbConfig();
 		$dbConfig = $dbConfig->dbConfig;

@@ -16,7 +16,7 @@ class Login
 		$password   = htmlspecialchars(trim($parameters['password']));
 		$password   = preg_replace('/&|#|;|\(|\)|\/|\'/', '', $password);
 
-		$db = new Database();
+		$db = Database::getInstance();
 		$result = $db->get(self::TBL_USER, null, $condition);
 		if ($result) {
 			if (password_verify($password, $result['password'])) {
@@ -41,7 +41,7 @@ class Login
 		$parameters = func_get_args()[0];
 
 		$userId =  $parameters['userId'];
-		$db = new Database();
+		$db = Database::getInstance();
 		$result = $db->get(self::TBL_USER, $userId);
 		if ($result) {
 			return json_encode($result);
